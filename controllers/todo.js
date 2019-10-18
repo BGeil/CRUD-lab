@@ -1,6 +1,6 @@
 const express = require(`express`)
 const router = express.Router()
-const model = require(`../models/todo.js`)
+const Todo = require(`../models/todo.js`)
 
 //routes
 
@@ -9,7 +9,15 @@ router.get(`/new`, (req, res) => {
 })
 
 router.post(`/`, (req, res) => {
-	console.log(`this is the create route`);
+	Todo.create(req.body, (err, todo) => {
+		if (err) {
+			res.send(err)
+		} 
+		else {
+			console.log(`this is the create route working`);
+			res.redirect(`/new`)
+		}
+	})
 })
 
 
