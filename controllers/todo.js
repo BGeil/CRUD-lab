@@ -39,6 +39,21 @@ router.get(`/`, (req, res) => {
 })
 
 
+// show route
+
+router.get(`/:id`, (req, res) => {
+	Todo.findById(req.params.id, (err, todo) => {
+		if (err) {
+			res.send(err)
+		} 
+		else {
+ 			res.render(`show.ejs`, {
+ 				todo: todo
+ 			})
+		}
+	})
+})
+
 
 
 
