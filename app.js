@@ -6,7 +6,11 @@ const app = express();
 
 
 
+//middleware
 
+const routerController = require(`./controllers/todo.js`)
+
+app.use(`/todo/`, routerController);
 
 
 
