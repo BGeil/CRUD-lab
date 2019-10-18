@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index page</title>
+</head>
+<body>
+<ul>
+	<% for (let i = 0; i < todos.length; i++) { -%>
+		<li>
+			<a href="/todo/<%=todos[i]._id%>"><%=todos[i].name%></a>
+		</li>
+	<% } -%>
+</ul>
+<a href="/todo/new">New ToDo Item</a>
+</body>
+</html>
